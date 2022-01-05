@@ -1,14 +1,13 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { projectsEndpoint } from '../api-constants';
+import { Injectable } from '@angular/core';
 import { CreateProjectDTO } from 'src/dtos/create-project.dto';
-import { Project } from 'src/models/project.model';
+import { projectsEndpoint } from '../../api-constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectsService {
-  /*constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getAllProjects(): any {
     return this.http.get(projectsEndpoint).toPromise();
@@ -21,5 +20,5 @@ export class ProjectsService {
   storeProjects(data: CreateProjectDTO) {
     //TODO: Send authorization token
     return this.http.post(projectsEndpoint, { data }).toPromise();
-  }*/
+  }
 }
