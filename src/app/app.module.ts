@@ -9,6 +9,9 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { LoadingScreenComponent } from './common/loading-screen/loading-screen.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { LoadingScreenComponent } from './common/loading-screen/loading-screen.c
     ContactUsComponent,
     HeaderComponent,
     FooterComponent,
-    LoadingScreenComponent
+    LoadingScreenComponent,
+    ServicesComponent,
+    PortfolioComponent,
+    
   ],
   imports: [
     BrowserModule,

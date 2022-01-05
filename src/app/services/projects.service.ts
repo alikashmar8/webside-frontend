@@ -8,7 +8,7 @@ import { Project } from 'src/models/project.model';
   providedIn: 'root',
 })
 export class ProjectsService {
-  constructor(private http: HttpClient) {}
+  /*constructor(private http: HttpClient) {}
 
   getAllProjects(): any {
     return this.http.get(projectsEndpoint).toPromise();
@@ -21,5 +21,5 @@ export class ProjectsService {
   storeProjects(data: CreateProjectDTO) {
     //TODO: Send authorization token
     return this.http.post(projectsEndpoint, { data }).toPromise();
-  }
+  }*/
 }
