@@ -2,12 +2,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JwtModule } from '@auth0/angular-jwt';
 import {
   ConfirmBoxConfigModule,
   DialogConfigModule,
   NgxAwesomePopupModule,
   ToastNotificationConfigModule
 } from '@costlydeveloper/ngx-awesome-popup';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { getAccessToken } from 'src/functions';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProjectCardComponent } from './card/project-card/project-card.component';
@@ -38,10 +42,19 @@ import { ServicesComponent } from './pages/services/services.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
     NgxAwesomePopupModule.forRoot(), // Essential, mandatory main module.
     DialogConfigModule.forRoot(), // Needed for instantiating dynamic components.
     ConfirmBoxConfigModule.forRoot(), // Needed for instantiating confirm boxes.
     ToastNotificationConfigModule.forRoot(), // Needed for instantiating toast notifications.
+    NgbModule, // Needed for instant
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: getAccessToken,
+        allowedDomains: ['*'],
+        disallowedRoutes: [],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

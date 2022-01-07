@@ -9,6 +9,9 @@ export const projectsEndpoint = apiUrl + 'projects/';
 //email subscribers endpoint
 export const emailSubscribersEndpoint = apiUrl + 'email-subscribers/';
 
+//email subscribers endpoint
+export const usersEndpoint = apiUrl + 'users/';
+
 // auth endpoints
 export const loginEndpoint = apiUrl + 'auth/login';
 export const logoutEndpoint = apiUrl + 'auth/logout';

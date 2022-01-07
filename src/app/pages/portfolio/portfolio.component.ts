@@ -26,8 +26,10 @@ export class PortfolioComponent implements OnInit {
     // open try catch block in case the server responded with an error instead of data
     try {
       // get data from backend and store it in variable
-      const response = await this.projectsService.getAllProjects();
-      this.projects = response[0];
+      this.projects  = await this.projectsService.getAllProjects();
+
+      console.log(this.projects);
+
 
       // after we got our data we will stop loading animation
       this.isLoading = this.loadingService.appLoading(false);

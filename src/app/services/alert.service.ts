@@ -56,7 +56,7 @@ export class AlertService {
 
     newToastNotification.setMessage(message);
     newToastNotification.setConfig({
-      LayoutType: DialogLayoutDisplay.DANGER, // SUCCESS | INFO | NONE | DANGER | WARNING
+      LayoutType: type, // SUCCESS | INFO | NONE | DANGER | WARNING
     });
 
     if (title) {

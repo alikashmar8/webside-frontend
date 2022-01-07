@@ -1,12 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { emailSubscribersEndpoint } from 'src/api-constants';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmailSubscribersService {
   subscribeEmail(email: any) {
-    throw new Error('Method not implemented.');
+    return this.http.post(emailSubscribersEndpoint, { email }).toPromise();
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 }
