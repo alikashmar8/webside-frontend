@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { usersEndpoint } from 'src/api-constants';
+import { ContactUsEmailDTO } from 'src/dtos/contact-us-email.dto';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,9 @@ import { usersEndpoint } from 'src/api-constants';
 export class UsersService {
   constructor(private http: HttpClient) {}
 
-  sendContactUsEmail(data: any) {
-    return this.http.post(usersEndpoint+ '/send-contact-us-email', { data });
+  sendContactUsEmail(data: ContactUsEmailDTO) {
+    return this.http
+      .post(usersEndpoint + 'send-contact-us-email', {...data })
+      .toPromise();
   }
 }
