@@ -31,9 +31,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
+    this.isLoading = this.loadingService.appLoading(true);
     setTimeout(() => {
       this.isLoading = this.loadingService.appLoading(false);
-    }, 0);
+    }, 3000);
   }
 
   ngOnDestroy() {
