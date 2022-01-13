@@ -5,6 +5,8 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { HomeComponent } from './pages/home/home.component';
+import { TermsComponent } from './terms/terms.component'; 
+import { PrivacyComponent } from './privacy/privacy.component'; 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'services', component: ServicesComponent },
+  { path: 'terms&concitions', component: TermsComponent },
+  { path: 'privacyPolicy', component: PrivacyComponent },
 ];
 
 @NgModule({

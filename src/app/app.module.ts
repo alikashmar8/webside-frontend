@@ -23,6 +23,8 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ServicesComponent } from './pages/services/services.component';
+import { TermsComponent } from './terms/terms.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { ServicesComponent } from './pages/services/services.component';
     ServicesComponent,
     PortfolioComponent,
     ProjectCardComponent,
+    TermsComponent,
+    PrivacyComponent,
   ],
   imports: [
     BrowserModule,
