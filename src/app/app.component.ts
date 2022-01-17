@@ -3,7 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   OnDestroy,
-  OnInit
+  OnInit,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoadingService } from './services/loading.service';
@@ -16,6 +16,7 @@ import { LoadingService } from './services/loading.service';
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
   isLoading: boolean = true;
   loadingSub: Subscription;
+  showMenu: boolean = false;
 
   constructor(
     private loadingService: LoadingService,
@@ -34,11 +35,15 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     this.isLoading = this.loadingService.appLoading(true);
     setTimeout(() => {
       this.isLoading = this.loadingService.appLoading(false);
-    }, 3000);
+    }, 0);
   }
 
   ngOnDestroy() {
     //unsub to avoid leaks
     this.loadingSub.unsubscribe();
+  }
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
   }
 }
