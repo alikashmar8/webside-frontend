@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { LoadingService } from 'src/app/services/loading.service';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { ProjectType } from 'src/enums/project-type.enum';
@@ -13,7 +13,7 @@ import { projectsMediaURL } from '../../../api-constants';
 export class PortfolioComponent implements OnInit {
   projects: Project[] = [];
   filteredProjects: Project[] = [];
-  isLoading: boolean = false;
+  isLoading: boolean = true;
   projectsMediaURL: string = projectsMediaURL;
 
   isAllClicked: boolean = true;
@@ -22,7 +22,8 @@ export class PortfolioComponent implements OnInit {
 
   constructor(
     private projectsService: ProjectsService,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private cdRef:ChangeDetectorRef
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -31,8 +32,11 @@ export class PortfolioComponent implements OnInit {
 
     // open try catch block in case the server responded with an error instead of data
     try {
+
       // get data from backend and store it in variable
       this.projects = await this.projectsService.getAllProjects();
+      console.log('projects: ', this.projects);
+
       this.filteredProjects = this.projects;
       // after we got our data we will stop loading animation
       this.isLoading = this.loadingService.appLoading(false);

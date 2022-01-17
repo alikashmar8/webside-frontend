@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -6,6 +6,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   providers: [NgbCarouselConfig],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
   constructor(config: NgbCarouselConfig) {

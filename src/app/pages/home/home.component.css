@@ -1,0 +1,4 @@
+.carousel-indicators li {
+  /* add a box shadow to the indicators to make them visible on white backgrounds */
+  background-color: #0b6bd3
+}
