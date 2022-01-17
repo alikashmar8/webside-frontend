@@ -7,7 +7,9 @@
       <a routerLink="" class="scrollto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
     </div>
 
-    <nav class="main-nav float-right d-none d-lg-block">
+    
+
+    <nav class="main-nav float-right d-none d-lg-block ">
       <ul>
         <li [ngClass]="{'active': isCurrentRoute('/')}"><a routerLink="" >Home</a></li>
         <li  [ngClass]="{'active': isCurrentRoute('/about-us')}" ><a routerLink="about-us">About Us</a></li>
@@ -32,8 +34,11 @@
           </ul>
         </li>
         <li [ngClass]="{'active': isCurrentRoute('/contact-us')}" ><a routerLink='contact-us' >Contact Us</a></li-->
+        <li style='padding-left: 3rem!important;'>.</li>
+        <li ><a href="tel:0283851576" ><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+        <li ><a href="mailto:contact@webside.com.au" ><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
       </ul>
-    </nav><!-- .main-nav -->
+    </nav><!-- .main-nav -->   
 
   </div>
 </header><!-- #header -->
